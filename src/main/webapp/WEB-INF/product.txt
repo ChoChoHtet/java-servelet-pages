@@ -1,0 +1,6 @@
+Food,Potato Chips,500
+Food,Chips,500
+Cold Drinks,Pepsi 350,450
+Cold Drinks,Pepsi 350,700
+Fruit,Orange,10
+Fruit,Apple,15
