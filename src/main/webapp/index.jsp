@@ -1,6 +1,6 @@
 <%@ page import="com.cho.jsp.model.ProductModel" %>
 <%@ page import="com.cho.jsp.model.entity.Product" %>
-<%@ page import="com.cho.jsp.service.ShoppingCart" %>
+<%@ page import="com.cho.jsp.model.service.ShoppingCart" %>
 <html>
 <head>
     <style>

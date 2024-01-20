@@ -2,7 +2,7 @@ package com.cho.jsp.controller;
 
 import com.cho.jsp.model.entity.Product;
 import com.cho.jsp.model.ProductModel;
-import com.cho.jsp.service.ShoppingCart;
+import com.cho.jsp.model.service.ShoppingCart;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

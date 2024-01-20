@@ -1,8 +1,8 @@
-package com.cho.jsp.service.impl;
+package com.cho.jsp.model.service.impl;
 
 import com.cho.jsp.model.entity.Product;
 import com.cho.jsp.model.entity.SaleItem;
-import com.cho.jsp.service.ShoppingCart;
+import com.cho.jsp.model.service.ShoppingCart;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

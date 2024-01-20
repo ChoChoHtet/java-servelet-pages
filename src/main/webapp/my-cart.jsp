@@ -1,4 +1,4 @@
-<%@ page import="com.cho.jsp.service.ShoppingCart" %>
+<%@ page import="com.cho.jsp.model.service.ShoppingCart" %>
 <%@ page import="com.cho.jsp.model.entity.SaleItem" %>
 <%@ page import="com.cho.jsp.model.entity.Product" %><%--
   Created by IntelliJ IDEA.
