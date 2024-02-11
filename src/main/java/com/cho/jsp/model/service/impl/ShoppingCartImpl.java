@@ -5,6 +5,7 @@ import com.cho.jsp.model.entity.SaleItem;
 import com.cho.jsp.model.service.ShoppingCart;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class ShoppingCartImpl implements ShoppingCart {
@@ -17,7 +18,7 @@ public class ShoppingCartImpl implements ShoppingCart {
 
     @Override
     public void add(Product product) {
-        var item = findItem(product);
+        var item = findItemById(product.getId());
         if (item == null) {
             SaleItem sale = new SaleItem(product);
             sale.increaseCount();
@@ -53,8 +54,24 @@ public class ShoppingCartImpl implements ShoppingCart {
         return saleItems;
     }
 
-    public SaleItem findItem(Product product) {
-        Optional<SaleItem> item = saleItems.stream().filter(x -> x.getProduct().getId() == product.getId()).findFirst();
+    @Override
+    public void updateCart(int id, boolean isAdd) {
+        var item = findItemById(id);
+        if (Objects.nonNull(item)) {
+            if (isAdd) {
+                item.increaseCount();
+            } else {
+                System.out.println("Sale Count: "+ item.getSaleCount());
+                if (item.getSaleCount() == 1) {
+                    saleItems.remove(item);
+                } else item.decreaseCount();
+            }
+
+        }
+    }
+
+    public SaleItem findItemById(int productId) {
+        Optional<SaleItem> item = saleItems.stream().filter(x -> x.getProduct().getId() == productId).findFirst();
         return item.orElse(null);
 
     }

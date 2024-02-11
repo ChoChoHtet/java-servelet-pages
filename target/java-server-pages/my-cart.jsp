@@ -1,4 +1,4 @@
-<%@ page import="com.cho.jsp.service.ShoppingCart" %>
+<%@ page import="com.cho.jsp.model.service.ShoppingCart" %>
 <%@ page import="com.cho.jsp.model.entity.SaleItem" %>
 <%@ page import="com.cho.jsp.model.entity.Product" %><%--
   Created by IntelliJ IDEA.
@@ -32,6 +32,13 @@
         .footer td {
             border: 0 solid black;
         }
+
+        .link-with-margin {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -51,8 +58,9 @@
         <th>ID</th>
         <th>Category</th>
         <th>Name</th>
-        <th>Count</th>
         <th>Price</th>
+        <th>Item Count</th>
+        <th>Total</th>
     </tr>
     <%
         for (SaleItem item : shoppingCart.getAllSaleItems()) {
@@ -65,7 +73,12 @@
         </td>
         <td><%=product.getName()%>
         </td>
-        <td><%=item.getSaleCount()%>
+        <td><%=product.getPrice()%>
+        </td>
+        <td style="text-align: center">
+            <a href="cart-plus?productId=<%=product.getId()%>" class="link-with-margin"> + </a>
+            <%=item.getSaleCount()%>
+            <a href="cart-minus?productId=<%=product.getId()%>" class="link-with-margin">-</a>
         </td>
         <td><%=item.getTotalPrice()%>
         </td>
@@ -84,7 +97,7 @@
     }
 %>
 <p>
-    <a href="index.jsp">Back to Cart</a>
+    <a href="index.jsp">Home</a>
 </p>
 </body>
 </html>

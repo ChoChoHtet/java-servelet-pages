@@ -15,6 +15,10 @@ public class SaleItem {
         saleCount++;
     }
 
+    public void decreaseCount() {
+        saleCount--;
+    }
+
     public int getUnitPrice() {
         return product.getPrice();
     }

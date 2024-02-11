@@ -10,14 +10,32 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet({"/cart-add", "/cart-show", "/cart-clear"})
+@WebServlet({"/cart-add",
+        "/cart-show",
+        "/cart-clear",
+        "/cart-plus",
+        "/cart-minus",
+})
 public class ShoppingCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         switch (req.getServletPath()) {
             case "/cart-add" -> addToCart(req, resp);
             case "/cart-show" -> showCarts(req, resp);
+            case "/cart-plus", "/cart-minus" -> updateCart(req, resp);
             default -> clearCart(req, resp);
+        }
+    }
+
+    private void updateCart(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        var id = req.getParameter("productId");
+
+        var session = req.getSession();
+        var cart = (ShoppingCart) session.getAttribute("cart");
+        if (cart != null) {
+            var isAdd = "/cart-plus".equals(req.getServletPath());
+            cart.updateCart(Integer.parseInt(id), isAdd);
+            resp.sendRedirect(req.getContextPath().concat("/my-cart.jsp"));
         }
     }
 

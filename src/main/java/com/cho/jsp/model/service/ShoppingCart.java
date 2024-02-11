@@ -16,6 +16,8 @@ public interface ShoppingCart {
 
     List<SaleItem> getAllSaleItems();
 
+    void updateCart(int id, boolean isAdd);
+
     static ShoppingCart generate() {
         return new ShoppingCartImpl();
     }
