@@ -12,25 +12,17 @@
 <head>
     <title>My Cart</title>
     <style>
-        table, tr, td, th {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 16px 8px 16px 8px;
-        }
-
-        th {
-            font-size: 18px;
-            text-align: left;
-            background-color: #61d8e3;
-            color: #f2f2f2;
-        }
-
+       th {
+           font-size: 18px;
+           text-align: left;
+       }
         table {
             width: 60%;
         }
 
         .footer td {
             border: 0 solid black;
+            margin-top: 10px;
         }
 
         .link-with-margin {
@@ -46,6 +38,9 @@
     ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("cart");
 %>
 <h2>My Cart</h2>
+<hr />
+<a href="index.jsp">Home</a>
+<hr />
 <%
     if (shoppingCart == null) {
 %>
@@ -75,7 +70,7 @@
         </td>
         <td><%=product.getPrice()%>
         </td>
-        <td style="text-align: center">
+        <td >
             <a href="cart-plus?productId=<%=product.getId()%>" class="link-with-margin"> + </a>
             <%=item.getSaleCount()%>
             <a href="cart-minus?productId=<%=product.getId()%>" class="link-with-margin">-</a>
@@ -88,7 +83,7 @@
         }
     %>
     <tr class="footer">
-        <td colspan="4">Total</td>
+        <td colspan="5">Total</td>
         <td colspan="5"><%=shoppingCart.totalPrice()%>
         </td>
     </tr>
@@ -96,8 +91,14 @@
 <%
     }
 %>
-<p>
-    <a href="index.jsp">Home</a>
-</p>
+<hr />
+<h4>Checkout</h4>
+<hr />
+<form action="checkout" method="post">
+    <label>
+        <input type="text" placeholder="Enter Customer name" name="customer_name">
+    </label>
+    <button type="submit" >Checkout</button>
+</form>
 </body>
 </html>

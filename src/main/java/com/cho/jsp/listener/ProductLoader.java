@@ -2,7 +2,7 @@ package com.cho.jsp.listener;
 
 
 import com.cho.jsp.model.entity.Product;
-import com.cho.jsp.model.ProductModel;
+import com.cho.jsp.model.service.ProductModel;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;

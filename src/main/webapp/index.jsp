@@ -1,4 +1,4 @@
-<%@ page import="com.cho.jsp.model.ProductModel" %>
+<%@ page import="com.cho.jsp.model.service.ProductModel" %>
 <%@ page import="com.cho.jsp.model.entity.Product" %>
 <%@ page import="com.cho.jsp.model.service.ShoppingCart" %>
 <html>
@@ -30,8 +30,7 @@
 <h2>Cho Marketplace</h2>
 <p>
     <% ShoppingCart cart = (ShoppingCart) session.getAttribute("cart"); %>
-    <a href="cart-show">Show Cart</a> <br>
-    Count: <%= cart == null ? 0 : cart.itemCount()%><br>
+    <a href="cart-show" style="margin-right: 10px">Show Cart</a><%= cart == null ? 0 : cart.itemCount()%><br>
     Total Amount: <%= cart == null ? 0.0 : cart.totalPrice()%><br>
 </p>
 <p>
@@ -74,5 +73,6 @@
         }
     %>
 </table>
+<p><a href="sale-history">View Sale History</a></p>
 </body>
 </html>

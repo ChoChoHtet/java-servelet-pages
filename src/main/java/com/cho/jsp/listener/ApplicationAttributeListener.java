@@ -1,6 +1,6 @@
 package com.cho.jsp.listener;
 
-import com.cho.jsp.model.ProductModel;
+import com.cho.jsp.model.service.ProductModel;
 import jakarta.servlet.ServletContextAttributeEvent;
 import jakarta.servlet.ServletContextAttributeListener;
 import jakarta.servlet.annotation.WebListener;

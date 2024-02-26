@@ -1,4 +1,4 @@
-package com.cho.jsp.model;
+package com.cho.jsp.model.service;
 
 import com.cho.jsp.model.entity.Product;
 import java.util.ArrayList;
