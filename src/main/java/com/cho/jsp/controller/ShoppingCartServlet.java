@@ -50,6 +50,8 @@ public class ShoppingCartServlet extends HttpServlet {
     }
 
     private void showCarts(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        getServletContext().log("TEST "+new Test());
+        req.setAttribute("testID", new Test());
         getServletContext().getRequestDispatcher("/my-cart.jsp").forward(req, resp);
     }
 

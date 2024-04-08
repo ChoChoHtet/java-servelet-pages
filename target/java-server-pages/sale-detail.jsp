@@ -39,16 +39,16 @@
         </td>
     </tr>
 </table>
-<h3 >Sale Items</h3>
+<h3>Sale Items</h3>
 <table style="width: 60%">
-    <thead >
-   <tr style="margin-bottom: 16px">
-       <td>Product Name</td>
-       <td>Category</td>
-       <td>Unit Price</td>
-       <td>Qty</td>
-       <td>Total</td>
-   </tr>
+    <thead>
+    <tr style="margin-bottom: 16px">
+        <td>Product Name</td>
+        <td>Category</td>
+        <td>Unit Price</td>
+        <td>Qty</td>
+        <td>Total</td>
+    </tr>
     </thead>
     <tbody>
     <% for (SaleItem sale : v.getSaleItems()) {

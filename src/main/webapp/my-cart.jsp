@@ -1,6 +1,7 @@
 <%@ page import="com.cho.jsp.model.service.ShoppingCart" %>
 <%@ page import="com.cho.jsp.model.entity.SaleItem" %>
-<%@ page import="com.cho.jsp.model.entity.Product" %><%--
+<%@ page import="com.cho.jsp.model.entity.Product" %>
+<%@ page import="com.cho.jsp.model.Test" %><%--
   Created by IntelliJ IDEA.
   User: chochohtet
   Date: 20/1/2024 AD
@@ -100,5 +101,17 @@
     </label>
     <button type="submit" >Checkout</button>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<p><a href="sale-history">View Sale History</a></p>
+<button id="test">Testing</button>
+<script >
+    /* if (!window.expt) {
+         window.expt = experimentation;
+     }*/
+    context = "${testID}";
+    console.log(context);
+</script>
+
 </body>
 </html>
